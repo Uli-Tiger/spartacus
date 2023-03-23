@@ -29,6 +29,7 @@ import { AppRoutingModule, StorefrontComponent } from '@spartacus/storefront';
 import { environment } from '../environments/environment';
 import { TestOutletModule } from '../test-outlets/test-outlet.module';
 import { SpartacusModule } from './spartacus/spartacus.module';
+import { ConfiguratorUISettingsConfig } from '@spartacus/product-configurator/rulebased';
 
 registerLocaleData(localeDe);
 registerLocaleData(localeJa);
@@ -91,6 +92,12 @@ if (!environment.production) {
       // Using special key value 'cx-development' allows google maps to display
       // without a key, for development or demo purposes.
       googleMaps: { apiKey: GOOGLE_MAPS_DEVELOPMENT_KEY_CONFIG },
+    }),
+    provideConfig(<ConfiguratorUISettingsConfig>{
+      productConfigurator: {
+        enableNavigationToConflict: true,
+        enableVariantSearch: true,
+      },
     }),
   ],
   bootstrap: [StorefrontComponent],
