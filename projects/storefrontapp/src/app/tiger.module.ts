@@ -18,7 +18,7 @@ import {
     }),
     provideConfig(<ConfiguratorCoreConfig>{
       productConfigurator: {
-        enableVariantSearch: false,
+        enableVariantSearch: true,
       },
     }),
   ],
