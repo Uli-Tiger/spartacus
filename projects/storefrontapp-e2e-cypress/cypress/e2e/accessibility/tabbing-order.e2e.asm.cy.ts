@@ -10,7 +10,7 @@ import {
   asmTabbingOrderNotLoggedIn,
   asmTabbingOrderWithCreateCustomerForm,
   asmTabbingOrderWithCustomerList,
-  asmTabbingOrderWithSelectedUser,
+  asmTabbingOrderWithSaveInactiveCartDialog,
 } from '../../helpers/accessibility/tabbing-order/asm';
 
 describe('Tabbing order for ASM', () => {
@@ -37,6 +37,12 @@ describe('Tabbing order for ASM', () => {
 
     it('should allow to navigate with tab key for create customer form (CXSPA-1594)', () => {
       asmTabbingOrderWithCreateCustomerForm(config.asmWithCreateCustomerForm);
+    });
+
+    it('should allow to navigate with tab key for save deeplink inactive cart dialog (CXSPA-3313)', () => {
+      asmTabbingOrderWithSaveInactiveCartDialog(
+        config.asmInactiveCartSaveDialog
+      );
     });
   });
 });
