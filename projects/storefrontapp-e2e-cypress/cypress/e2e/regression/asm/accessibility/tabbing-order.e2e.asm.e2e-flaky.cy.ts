@@ -11,6 +11,7 @@ import {
   asmTabbingOrderWithCreateCustomerForm,
   asmTabbingOrderWithCustomerList,
   asmTabbingOrderWithSaveInactiveCartDialog,
+  asmTabbingOrderWithSelectedUser,
 } from '../../../../helpers/accessibility/tabbing-order/asm';
 
 describe('Tabbing order for ASM', () => {
