@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -89,7 +89,7 @@ export class CDCRegisterComponentService extends RegisterComponentService {
    */
   register(user: UserSignUp): Observable<User> {
     if (!user.firstName || !user.lastName || !user.uid || !user.password) {
-      return throwError(`The provided user is not valid: ${user}`);
+      return throwError(() => `The provided user is not valid: ${user}`);
     }
     /** fill the user preferences */
     user.preferences = this.generatePreferencesObject();

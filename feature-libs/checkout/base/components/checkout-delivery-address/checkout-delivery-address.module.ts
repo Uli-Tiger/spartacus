@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -14,14 +14,11 @@ import {
   provideDefaultConfig,
   FeaturesConfigModule,
 } from '@spartacus/core';
-import {
-  AddressFormModule,
-  CardModule,
-  SpinnerModule,
-} from '@spartacus/storefront';
+import { CardModule, SpinnerModule } from '@spartacus/storefront';
 import { CartNotEmptyGuard } from '../guards/cart-not-empty.guard';
 import { CheckoutAuthGuard } from '../guards/checkout-auth.guard';
 import { CheckoutDeliveryAddressComponent } from './checkout-delivery-address.component';
+import { AddressFormModule } from '@spartacus/user/profile/components';
 
 @NgModule({
   imports: [
