@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -142,6 +142,29 @@ export function listenForCustomerCreateRequest(): string {
     '/assistedservicewebservices/customers?*',
     false
   );
+}
+
+export function removeCustomerCoupon(
+  customer: string,
+  pwd: string,
+  couponCode: string
+): void {
+  cy.login(customer, pwd).then(() => {
+    const auth = JSON.parse(localStorage.getItem('spartacus⚿⚿auth'));
+    // remove customer coupon
+    cy.request({
+      method: 'DELETE',
+      url: `${Cypress.env('API_URL')}/${Cypress.env(
+        'OCC_PREFIX'
+      )}/${Cypress.env(
+        'BASE_SITE'
+      )}/users/current/customercoupons/${couponCode}/claim`,
+      headers: {
+        Authorization: `bearer ${auth.token.access_token}`,
+      },
+      failOnStatusCode: false,
+    });
+  });
 }
 
 export function agentLogin(user, pwd): void {

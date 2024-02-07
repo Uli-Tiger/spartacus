@@ -1,10 +1,9 @@
 /*
- * SPDX-FileCopyrightText: 2023 SAP Spartacus team <spartacus-team@sap.com>
+ * SPDX-FileCopyrightText: 2024 SAP Spartacus team <spartacus-team@sap.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export * from './address-book/index';
 export * from './consent-management/index';
 export * from './my-coupons/index';
 export * from './my-interests/my-interests.component';
