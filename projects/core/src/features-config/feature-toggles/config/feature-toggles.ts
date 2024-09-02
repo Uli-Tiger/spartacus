@@ -391,7 +391,8 @@ export interface FeatureTogglesInterface {
   /**
    * When enabled the button-like UI elements will use `<button>` under the hood instead of `<a>`
    * in the following components: `AddedToCartDialogComponent`, `ForgotPasswordComponent`,
-   * `LoginRegisterComponent`, `ConfigureProductComponent`, `AnonymousConsentDialogComponent`
+   * `LoginRegisterComponent`, `ConfigureProductComponent`, `AnonymousConsentDialogComponent`,
+   * `StoreSearchComponent`, `AddToSavedCartComponent`, `PickupOptionsComponent`
    */
   a11yUseButtonsForBtnLinks?: boolean;
 
@@ -471,6 +472,11 @@ export interface FeatureTogglesInterface {
    * Modifies the 'NgSelectA11yDirective' to improve the sorting dropdown screen reader experience on mobile devices.
    */
   a11yNgSelectMobileReadout?: boolean;
+
+  /**
+   * Changes modal title elements form divs into headings. Affects modals before version 2211.27.
+   */
+  a11yDialogsHeading?: boolean;
 
   /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
@@ -559,6 +565,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yRepeatedCancelOrderError: false,
   a11yAddedToCartActiveDialog: false,
   a11yNgSelectMobileReadout: false,
+  a11yDialogsHeading: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
 };
