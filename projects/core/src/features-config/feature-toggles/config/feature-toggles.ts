@@ -187,6 +187,11 @@ export interface FeatureTogglesInterface {
   a11yViewChangeAssistiveMessage?: boolean;
 
   /**
+   * Prevent horizontal scroll appearing on smaller screens for `CartItemListComponent`, `AddedToCartDialogComponent`
+   */
+  a11yPreventHorizontalScroll?: boolean;
+
+  /**
    * Refocuses inside of 'ReorderDialogComponent' after its content updates.
    */
   a11yReorderDialog?: boolean;
@@ -267,6 +272,11 @@ export interface FeatureTogglesInterface {
   a11yStoreFinderOverflow?: boolean;
 
   /**
+   * `StorefrontComponent` focuses on the first navigation item after hamburger menu expansion
+   */
+  a11yMobileFocusOnFirstNavigationItem?: boolean;
+
+  /**
    * Corrects heading order inside 'OrderSummaryComponent' template.
    */
   a11yCartSummaryHeadingOrder?: boolean;
@@ -308,6 +318,13 @@ export interface FeatureTogglesInterface {
    * Determines whether the controls in the `CarouselComponent` are focusable and accessible from the keyboard.
    */
   a11yFocusableCarouselControls?: boolean;
+
+  /**
+   * Enables only Tab/Shift+Tab keyboard navigation in dialogs and preserved default scrolling behaviour of up/down keys.
+   * Components:
+   * - `PickupOptionDialogComponent`
+   */
+  a11yUseTrapTabInsteadOfTrapInDialogs?: boolean;
 
   /**
    * In `CmsGuardsService`, it uses the `GuardsComposer` instead of
@@ -619,6 +636,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yOrderConfirmationHeadingOrder: false,
   a11yStarRating: false,
   a11yViewChangeAssistiveMessage: false,
+  a11yPreventHorizontalScroll: false,
   a11yReorderDialog: false,
   a11yPopoverFocus: false,
   a11yScheduleReplenishment: false,
@@ -634,6 +652,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yReplenishmentOrderFieldset: false,
   a11yListOversizedFocus: false,
   a11yStoreFinderOverflow: false,
+  a11yMobileFocusOnFirstNavigationItem: false,
   a11yCartSummaryHeadingOrder: false,
   a11ySearchBoxMobileFocus: false,
   a11yFacetKeyboardNavigation: false,
@@ -641,6 +660,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yCartItemsLinksStyles: false,
   a11yHideSelectBtnForSelectedAddrOrPayment: false,
   a11yFocusableCarouselControls: false,
+  a11yUseTrapTabInsteadOfTrapInDialogs: false,
   cmsGuardsServiceUseGuardsComposer: false,
   cartQuickOrderRemoveListeningToFailEvent: false,
   a11yKeyboardAccessibleZoom: false,
