@@ -668,6 +668,12 @@ export interface FeatureTogglesInterface {
   a11yDeleteButton2First?: boolean;
 
   /**
+   * Fixes text formatting issues while a11y text spacing is enabled.
+   * Affects: ListComponent, CSAgentLoginFormComponent
+   */
+  a11yTextSpacingAdjustments?: boolean;
+
+  /**
    * In OCC cart requests, it puts parameters of a cart name and cart description
    * into a request body, instead of query params.
    * This toggle is used in the following classes: `OccCartAdapter`, `OccSavedCartAdapter`, `SavedCartOccModule`, `CartBaseOccModule`.
@@ -717,6 +723,12 @@ export interface FeatureTogglesInterface {
    *       in the future together with this feature toggle.
    */
   allPageMetaResolversEnabledInCsr?: boolean;
+
+  /**
+   * CDS/ISS is integrated into the SAP Cloud Identity Service (SCI). The downstream services use different domains and URL formats.
+   * This feature toggle can be used to make the CDS module use these new URLs.
+   */
+  sciEnabled?: boolean;
 
   /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
@@ -854,11 +866,13 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yApprovalProcessWithNoClearable: false,
   a11yPostRegisterSuccessMessage: false,
   a11yDeleteButton2First: false,
+  a11yTextSpacingAdjustments: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
   cmsBottomHeaderSlotUsingFlexStyles: false,
   useSiteThemeService: false,
   enableConsecutiveCharactersPasswordRequirement: false,
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
+  sciEnabled: false,
   useExtendedMediaComponentConfiguration: false,
 };

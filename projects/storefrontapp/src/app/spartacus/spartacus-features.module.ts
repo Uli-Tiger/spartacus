@@ -391,11 +391,13 @@ if (environment.cpq) {
         a11yApprovalProcessWithNoClearable: true,
         a11yPostRegisterSuccessMessage: true,
         a11yDeleteButton2First: true,
+        a11yTextSpacingAdjustments: true,
         cmsBottomHeaderSlotUsingFlexStyles: true,
         useSiteThemeService: false,
         enableConsecutiveCharactersPasswordRequirement: true,
         enablePasswordsCannotMatchInPasswordUpdateForm: true,
         allPageMetaResolversEnabledInCsr: true,
+        sciEnabled: true,
         useExtendedMediaComponentConfiguration: true,
       };
       return appFeatureToggles;
