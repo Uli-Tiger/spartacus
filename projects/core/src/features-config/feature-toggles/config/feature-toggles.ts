@@ -266,6 +266,11 @@ export interface FeatureTogglesInterface {
   a11yCartImportConfirmationMessage?: boolean;
 
   /**
+   * In `AnonymousConsentDialogComponent` display notifications inside the modal without closing it
+   */
+  a11yAnonymousConsentMessageInDialog?: boolean;
+
+  /**
    * Changes 'order days' check list into a fieldset inside of 'CheckoutScheduleReplenishmentOrderComponent'.
    */
   a11yReplenishmentOrderFieldset?: boolean;
@@ -285,6 +290,11 @@ export interface FeatureTogglesInterface {
    * `StorefrontComponent` focuses on the first navigation item after hamburger menu expansion
    */
   a11yMobileFocusOnFirstNavigationItem?: boolean;
+
+  /**
+   * `QuickOrderFormComponent` - disable navigation with Tab/Shift+Tab for search results list
+   */
+  a11yQuickOrderSearchListKeyboardNavigation?: boolean;
 
   /**
    * Corrects heading order inside 'OrderSummaryComponent' template.
@@ -404,6 +414,12 @@ export interface FeatureTogglesInterface {
    * `StoreFinderListItemComponent` street name is not truncated
    */
   a11yTruncatedTextStoreFinder?: boolean;
+
+  /**
+   * `UnitLevelOrderHistoryComponent` filter input label and table email address
+   * are not truncated
+   */
+  a11yTruncatedTextUnitLevelOrderHistory?: boolean;
 
   /**
    * When enabled focus outline on the close button inside `ProductImageZoomDialogComponent`
@@ -736,10 +752,25 @@ export interface FeatureTogglesInterface {
   a11ySearchboxAssistiveMessage?: boolean;
 
   /**
+   * Updates the derivative `consentGiven` state when `consent` is updated.
+   *
+   * Components affected:
+   * - `ConsentManagementFormComponent`
+   * - `MyAccountV2ConsentManagementFormComponent`
+   */
+  updateConsentGivenInOnChanges?: boolean;
+
+  /**
    * Adds additional styling to help differentiate between focused and selected items in the list.
    * Affects: ConfiguratorAttributeSingleSelectionImageComponent, ProductImagesComponent
    */
   a11yDifferentiateFocusedAndSelected?: boolean;
+
+  /**
+   * Adds a visible focus indicator for keyboard navigation in the `SearchBoxComponent` without affecting the visual state for mouse interactions.
+   * Affects: SearchBoxComponent
+   */
+  a11yKeyboardFocusInSearchBox?: boolean;
 
   /**
    * Adds horizontal padding to the 'carousel-panel' to fix the issue where the focus only covers three sides of the 'Previous slide' and 'Next slide' buttons within the carousel section.
@@ -815,6 +846,13 @@ export interface FeatureTogglesInterface {
   a11yPdpGridArrangement?: boolean;
 
   /**
+   * Header. Fixes trapping focus on menu items on mobile when the menu is expanded.
+   * Sets `tabindex` attribute  to `-1` for all visible focusable elements in the header section to exclude them from
+   * keyboard navigation
+   */
+  a11yHamburgerMenuTrapFocus?: boolean;
+
+  /**
    * When enabled, allows to provide extended formats and media queries for <picture> element if used in MediaComponent.
    *
    * Important: After activation default HTML element in MediaComponent will be `<img>`
@@ -848,6 +886,12 @@ export interface FeatureTogglesInterface {
    * when set to `true`, the user will be able to see the real time stock in PDP
    */
   showRealTimeStockInPDP?: boolean;
+
+  /**
+   * When enabled, the scroll-to-top button adjusts its position when other UI elements
+   * (like cookie consent banner) appear at the bottom of the page to prevent overlapping
+   */
+  a11yScrollToTopPositioning?: boolean;
 
   /**
    * Creates a section element with applied aria-label in "Review Order" page of the checkout.
@@ -914,10 +958,12 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yOrganizationsBanner: true,
   a11yOrganizationListHeadingOrder: true,
   a11yCartImportConfirmationMessage: false,
+  a11yAnonymousConsentMessageInDialog: false,
   a11yReplenishmentOrderFieldset: true,
   a11yListOversizedFocus: true,
   a11yStoreFinderOverflow: true,
   a11yMobileFocusOnFirstNavigationItem: false,
+  a11yQuickOrderSearchListKeyboardNavigation: false,
   a11yCartSummaryHeadingOrder: true,
   a11ySearchBoxMobileFocus: true,
   a11yFacetKeyboardNavigation: true,
@@ -936,6 +982,7 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yVisibleFocusOverflows: true,
   a11yTruncatedTextForResponsiveView: true,
   a11yTruncatedTextStoreFinder: false,
+  a11yTruncatedTextUnitLevelOrderHistory: false,
   a11ySemanticPaginationLabel: true,
   a11yPreventCartItemsFormRedundantRecreation: false,
   a11yPreventSRFocusOnHiddenElements: true,
@@ -992,7 +1039,9 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   a11yTextSpacingAdjustments: false,
   a11yTableHeaderReadout: false,
   a11ySearchboxAssistiveMessage: false,
+  updateConsentGivenInOnChanges: false,
   a11yDifferentiateFocusedAndSelected: false,
+  a11yKeyboardFocusInSearchBox: false,
   a11yAddPaddingToCarouselPanel: false,
   a11yHideConsentButtonWhenBannerVisible: false,
   occCartNameAndDescriptionInHttpRequestBody: false,
@@ -1002,8 +1051,10 @@ export const defaultFeatureToggles: Required<FeatureTogglesInterface> = {
   enablePasswordsCannotMatchInPasswordUpdateForm: false,
   allPageMetaResolversEnabledInCsr: false,
   a11yPdpGridArrangement: false,
+  a11yHamburgerMenuTrapFocus: false,
   useExtendedMediaComponentConfiguration: false,
   showRealTimeStockInPDP: false,
+  a11yScrollToTopPositioning: false,
   enableSecurePasswordValidation: false,
   enableCarouselCategoryProducts: false,
 };
