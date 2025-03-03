@@ -11,11 +11,6 @@ import {
 } from '@spartacus/product-configurator/rulebased';
 @NgModule({
   providers: [
-    provideConfig(<ConfiguratorUISettingsConfig>{
-      productConfigurator: {
-        enableNavigationToConflict: true,
-      },
-    }),
     provideConfig(<ConfiguratorCoreConfig>{
       productConfigurator: {
         enableVariantSearch: true,
