@@ -5,10 +5,7 @@
  */
 import { NgModule } from '@angular/core';
 import { provideConfig } from '@spartacus/core';
-import {
-  ConfiguratorCoreConfig,
-  ConfiguratorUISettingsConfig,
-} from '@spartacus/product-configurator/rulebased';
+import { ConfiguratorCoreConfig } from '@spartacus/product-configurator/rulebased';
 @NgModule({
   providers: [
     provideConfig(<ConfiguratorCoreConfig>{
