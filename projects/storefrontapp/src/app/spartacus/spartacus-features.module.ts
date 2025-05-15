@@ -15,7 +15,6 @@ import {
   ProductOccModule,
   UserModule,
   UserOccModule,
-  provideAuthorizationCodeFlowByDefault,
   provideFeatureTogglesFactory,
 } from '@spartacus/core';
 import {
@@ -287,7 +286,6 @@ if (environment.cpq) {
       provide: USE_MY_ACCOUNT_V2_NOTIFICATION_PREFERENCE,
       useValue: environment.myAccountV2,
     },
-    provideAuthorizationCodeFlowByDefault(false),
     provideFeatureTogglesFactory(() => {
       const appFeatureToggles: Required<FeatureToggles> = {
         showDeliveryOptionsTranslation: true,
@@ -296,6 +294,7 @@ if (environment.cpq) {
         showStyleChangesInASM: false,
         shouldHideAddToCartForUnpurchasableProducts: false,
         useExtractedBillingAddressComponent: false,
+        showOrderQuoteLink: false,
         showBillingAddressInDigitalPayments: false,
         searchBoxV2: false,
         trendingSearches: false,
