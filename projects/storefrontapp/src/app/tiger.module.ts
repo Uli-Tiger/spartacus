@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { NgModule } from '@angular/core';
-import { provideConfig, provideDefaultConfig } from '@spartacus/core';
+import { provideConfig } from '@spartacus/core';
 import { ConfiguratorCoreConfig } from '@spartacus/product-configurator/rulebased';
 @NgModule({
   providers: [
@@ -13,7 +13,6 @@ import { ConfiguratorCoreConfig } from '@spartacus/product-configurator/rulebase
         enableVariantSearch: true,
       },
     }),
-    provideDefaultConfig({ routing: { protected: false } }),
   ],
 })
 export class TigerModule {}
